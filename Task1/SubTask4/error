@@ -1,0 +1,3 @@
+cat: nonexistentfile: No such file or directory
+grep: /etc/nofiles: No such file or directory
+bash: /etc/init.d/sshd: No such file or directory
