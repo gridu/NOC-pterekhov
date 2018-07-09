@@ -1,0 +1,90 @@
+1. Explain your understanding of CI, CD, DevOps practices in software development.
+
+What is it? What benefits it provides? Why do we need to spread it widely across the world?
+
+
+CI - continuous integration is a process:
+	1) Developers place their code into their private workspace
+	2) Then commit the changes to the repository
+	3) The CI server monitors the repository and finds out any changes
+	4) The CI server builds the code and tests
+	5) The CI server releases deployable code for testing
+	6) The CI server adds a build label to the version of the code it just built
+	7) The CI server informs the team of the successful build
+	8) If the build or tests fail, the CI server alerts the team
+	9) Developers fix the problem
+	then the process repeats. 
+     
+	CI helps a developer to:
+	1) save his time for developing the program.
+	2) reduce the integration problems giving a developer an opportunity to push his code more rapidly.
+	3) catch any problems earlier.  
+
+CD - continuous delivery is a process that closely related to CI and refers to keeping you code releasable any time.
+     CD makes it possible to continuously adapt code in line with user feedback. 
+	
+	1) CD lets an organization deliver the new software releases to customers more quickly.
+	2) Frequent releases let the development teams obtain user feedback more quickly.This lets them work on only the useful features.
+	3) Saving time for developers, testers, and others through automation.
+	4) Low risks associated with a release. With CD, code is tested repeatedly before deployment to production.
+           With more frequent releases, the number of code changes in each release decreases.
+           This makes finding and fixing any problems easier.
+	     
+DevOps - Development ad Operations. DevOps aims at automation and monitoring at all steps of software construction and
+         shorter development cycles and increased frequence of deployment.
+	
+	 Plan -> Code -> Test -> Build -> Release -> Monitor -> Respond -> Repeat
+
+
+2. There's an application that grew quite big. It's been decided to migrate it from monolithic app to micro-services. 
+
+What will be the advantages of its containerisation?
+
+
+The benefits of a microservice based application:
+	1) Application will become more scalable. That allows a program to handle a growing amount of work. 
+	2) Fault tolerant and isolated services.
+	   Splitting your application into smaller services allows you have more granular fault tolerance.
+	   Isolating your services allows you to maintain your application uptime even if you can’t access a portion of it.
+
+
+How often both solutions (ms and mono) may be updated under live traffic?
+
+	MS: It can be updated often becase it's much easier to add something new to a small isolated part of a big code. 
+	    Also using ms-architecture give you an opportunity to change an application without stopping its work.
+
+	Mono:  It'll be pretty hard to update a mono-architecture application frequently because in that case developer should build and test all aplication, not a part of it.
+
+
+3. Software Pipeline. What is it? Why do we need to use it?
+
+Describe mandatory steps of PPL  and application lifecycle. 
+
+
+	Software pipeline is a process of developing a program where the output of one element is the input of the next one.
+
+	Plan -> Develop -> Test -> Build -> Deploy -> Monitor -> Respond -> Repeat.
+
+
+4. You have application sources in remote repository. And production environment under live traffic.
+
+How source code transformed to running service? Please share steps of release process.
+
+	First building the application, then running code analysis, unit tests, and integration/API tests (all in parallel).
+	If all the tasks in this stage of the pipeline passes, then a smoke test suite is triggered, and if the smoke test also passes,
+	it triggers the regression test suite and the visual regression test suite (executed in parallel),
+	and then, if this final stage passes as well, then we have a release candidate that can be promoted to production.
+
+5.  Share known solutions which are used in software development.
+
+	What mostly used for orchestration? Travis, TeamCity, CircleCI, Drone.io
+	What is known Configuration Management tools? Puppet, Chef, Ansible, SlatStack, UpGuard.
+	How we can establish code review process and why?  
+
+	Code review is intended to find mistakes overlooked in software development, improving the overall quality of software.
+
+
+
+     
+	
+
