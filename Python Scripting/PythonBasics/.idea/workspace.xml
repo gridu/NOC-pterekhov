@@ -12,8 +12,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="program1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/program1.py">
+      <file leaf-file-name="program1_1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/program1_1.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
@@ -24,23 +24,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="program1changed.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/program1changed.py">
+      <file leaf-file-name="program1_2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/program1_2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="21" column="20" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="345">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="program2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="program2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/program2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
+            <state relative-caret-position="570">
               <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
               <folding>
                 <element signature="e#68#82#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="program3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/program3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="program4.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/program4.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="program5.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/program5.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -72,6 +99,9 @@
         <option value="$PROJECT_DIR$/program1.py" />
         <option value="$PROJECT_DIR$/program1changed.py" />
         <option value="$PROJECT_DIR$/program2.py" />
+        <option value="$PROJECT_DIR$/program3.py" />
+        <option value="$PROJECT_DIR$/program4.py" />
+        <option value="$PROJECT_DIR$/program5.py" />
       </list>
     </option>
   </component>
@@ -120,7 +150,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.program2">
+  <component name="RunManager" selected="Python.program5">
     <configuration name="program1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PythonBasics" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -133,7 +163,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/program1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/program1_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,7 +181,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/program1changed.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/program1_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,13 +205,53 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="program4" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PythonBasics" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/program4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="program5" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PythonBasics" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/program5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.program1" />
       <item itemvalue="Python.program1changed" />
       <item itemvalue="Python.program2" />
+      <item itemvalue="Python.program4" />
+      <item itemvalue="Python.program5" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.program5" />
+        <item itemvalue="Python.program4" />
         <item itemvalue="Python.program2" />
         <item itemvalue="Python.program1changed" />
         <item itemvalue="Python.program1" />
@@ -203,11 +273,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1615" height="1026" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2495356" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2495356" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32934782" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32934782" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -243,7 +314,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/program1.py">
+    <entry file="file://$PROJECT_DIR$/program1_1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
@@ -253,20 +324,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/program1changed.py">
+    <entry file="file://$PROJECT_DIR$/program1_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="21" selection-end-column="20" />
+        <state relative-caret-position="345">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/program2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="570">
           <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
           <folding>
             <element signature="e#68#82#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/program5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
