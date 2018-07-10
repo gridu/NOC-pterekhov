@@ -1,3 +1,0 @@
-/sbin/ifconfig: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=032086737dffbf3bf523ec2057c7b3d057ea8ff7, stripped
-/etc/passwd:root:x:0:0:root:/root:/bin/bash
-bash: /etc/init.d/crond: No such file or directory

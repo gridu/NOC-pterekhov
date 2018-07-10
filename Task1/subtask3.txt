@@ -1,2 +1,0 @@
-nohup ./IPScript2.sh& #to run script IPScript2.sh immune to hangups
-
