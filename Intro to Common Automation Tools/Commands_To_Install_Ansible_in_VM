@@ -1,0 +1,10 @@
+установить Ansible на ubuntu: sudo apt-get install ansible
+установить Ansible на centos/7: sudo yum install ansible
+установить Ansible на centos/7 с помощью питона: sudo yum install python-setuptools
+						 sudo easy_install pip
+						 sudo yum install python-devel 
+						 sudo pip install ansible
+
+
+
+
