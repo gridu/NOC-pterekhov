@@ -1,0 +1,28 @@
+node("Pavel_Agent1") {
+    
+    stage('CheckOut') {
+        git 'https://github.com/vikrammane23/https-github.com-g0t4-jenkins2-course-spring-boot.git'
+    }
+    
+    def project_path = 'spring-boot-samples/spring-boot-sample-atmosphere'
+    dir(project_path) {
+        
+        stage('Compiling') {
+            sh 'mvn clean package'
+        }
+        
+        stage('Archival') {
+            archiveArtifacts 'target/*.jar'
+        }
+    
+    }
+    
+}
+
+node("Pavel_Agent2") {
+    
+    stage('Mail') {
+       emailext attachLog: true, body: 'Check console output <a href=\'env.BUILD_URL\'> HERE </a>', compressLog: true, subject: 'Job: ${env.JOB_NAME} Build: ${env.BUILD_NUMBER}', to: 'pterekhov@griddynamics.com'
+    }
+    
+}
