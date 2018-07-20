@@ -28,14 +28,14 @@
                 <version>2.4</version>
                 <configuration>
                     <includes>
-                        <include>**/properties/*</include>
+                        **/properties/*
                     </includes>
                     <excludes>
-                        <exclude>**/*.png</exclude>
+                        **/*.png
                     </excludes>
                     <archive>
                         <includes>
-                            <include>**/properties/*</include>
+                            **/properties/*
                         </includes>
                         <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
                     </archive>
