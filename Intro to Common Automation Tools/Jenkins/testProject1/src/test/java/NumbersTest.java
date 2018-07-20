@@ -4,26 +4,35 @@ import static org.junit.Assert.*;
 
 public class NumbersTest {
 
-    Numbers NUM = new Numbers();
-
     @Test
     public void SUM() {
-        int actual = NUM.SUM(5);
-        int expected = 15;
-        assertEquals(expected,actual);
+        Numbers test1 = new Numbers();
+        double actual = test1.SUM(5,5);
+        double expected = 10.00;
+        assertEquals(expected,actual,2);
     }
 
     @Test
-    public void multiply() {
-        int actual = NUM.Multiply(5,5);
-        int expected = 25;
-        assertEquals(expected,actual);
+    public void DIFF() {
+        Numbers test1 = new Numbers();
+        double actual =  test1.DIFF(10,5);
+        double expected = 5.00;
+        assertEquals(expected,actual,2);
     }
 
     @Test
-    public void multiplyDouble() {
-        double actual = NUM.MultiplyDouble(2.5,3);
-        double expected = 7.5;
-        assertEquals(expected,actual,1);
+    public void MULTIPLY() {
+        Numbers test1 = new Numbers();
+        double actual = test1.MULTIPLY(5,5);
+        double expected = 25.00;
+        assertEquals(expected,actual,2);
+    }
+
+    @Test
+    public void DIVIDE() {
+        Numbers test1 = new Numbers();
+        double actual = test1.DIVIDE(15,5);
+        double expected = 3.00;
+        assertEquals(expected,actual,2);
     }
 }
