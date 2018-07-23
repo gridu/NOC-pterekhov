@@ -1,0 +1,13 @@
+in the pictures dockerworks1 and dockerworks2 you can see:
+dockerworks1 :
+	checking out git repo
+	compiling project with maven
+	building docker image
+	pushing this image to docker repo
+	pulling this image from docker repo to AWS VM Pavel_Agent3
+
+dockerworks2:
+	running this image
+	running a program inside this image
+	getting answer
+
