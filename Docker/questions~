@@ -1,0 +1,44 @@
+Questions:
+
+    1) How containerization differs with virtualization?
+    2) What are benefits of containerization?
+    3) What are downsides of containerization?
+    4) For what scenarios containerization is suitable?
+
+Answers:
+
+    1) VMs:				Containers:
+       
+       Heavyweight			Lightweight
+       Limited performance		Native performance
+       Full isolation			Process-level isolation
+       
+
+    2) Containers are highly portable. When developers move containerized 
+       applications across one or many servers, they don’t have to worry about 
+       integration issues with the operating system.
+   
+       With containerization and a service-oriented application design,
+       you can scale just the functions you want to without affecting
+       the entire application.
+
+       Simple and fast deployment.
+
+       Application isolation allows you to improve security
+       by setting each application’s major process apart from
+       one another in different containers. 
+
+
+    3) Containers consume resources more efficiently than virtual machines.
+       But containers are still subject to performance overhead due to overlay
+       networking, interfacing between containers and the host system.
+
+       By design, all of the data inside a container disappears forever when
+       the container shuts down, unless you save it somewhere else first.
+
+       Graphical applications don't work well. Docker was designed as a solution
+       for deploying server applications that don't require a graphical interface.
+
+
+
+    4) It can be used to  run applications that are designed as a set of microservices. 
