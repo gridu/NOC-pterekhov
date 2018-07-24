@@ -1,0 +1,51 @@
+
+questions:
+
+	1) What are the advantages of Java in software development?
+	2) What is stack memory and heap? Which one is used for what?
+	3) Please explain parameters: -Xmx / -Xms / -Xss / -Xmn
+	4) What is GC process? What does it needed for?
+	5) What is New Generation (Eden, 2 Survivors) and Old Generation?
+	6) Please describe algorithms used by GCs you know?
+	7) Why does Java use different algorithms for old and young generation objects?
+
+answers:
+
+	1) Java is ... platform-independent. (Apps written on this language can move easily from one system to another because of JVM)
+		   ... object-oriented. (Allows you to create modular maintainable applications and reusable code)
+		   ... multithreaded. (Allows programm to do several tasks at the same time)
+
+
+	2) Stack is used for static memory allocation (such as variables)
+           and Heap for dynamic memory allocation (such as class instances),
+           both stored in the computer's RAM.
+
+
+	3) -Xmx: specifies the maximum memory allocation pool for a Java virtual machine
+	   -Xms: specifies the initial memory allocation pool.
+	   -Xss: sets thread stack size
+	   -Xmn: sets the initial and maximum size of the new heap 
+
+
+	4) GC - Garbage Collection. When an object is no longer used, the garbage collector
+	   reclaims the underlying memory and reuses it for future object allocation.
+
+
+	5) Young generation.
+	   Young generation  memory is 40% of Maximum Java Heap. It consists of two parts, Eden space and Survivor Space.
+	
+	   Eden Space.
+           Initially objects are created in this  Part of Java Heap, here most objects die and quickly are cleaned up
+           by the Garbage Collectors (It only runs in young generation and its frequency is high in compared to major garbage collector). 		    	       Usually any new objects created inside a Java Method go into Eden space and the objects space is reclaimed once the method execution 	     	        completes. Whereas the Instance Variables of a Class usually lives longer until the Object based on that class gets destroyed.
+           When Eden fills up it causes a minor collection, in which some surviving objects are moved to Survivor Space or an older generation. 
+
+           Survivor Space. 
+           The pool containing objects that have survived the garbage collection of the Eden space.
+
+
+	6) The GC in the old generation uses an algorithm called "mark-sweep-compact."
+	   The first step of this algorithm is to mark the surviving objects in the old generation.
+	   Then, it checks the heap from the front and leaves only the surviving ones behind.
+
+	7) To increase the performance.
+	
