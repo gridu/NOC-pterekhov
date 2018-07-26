@@ -4,7 +4,7 @@ set -ex
 echo "качаем jenkins-cli для дальнейшей работы"
 sleep 2s   
 #качаем jenkins-cli для дальнейшей работы
-wget http://localhost:8080/jnlpJars/jenkins-cli.jar -O /root/jenkins-cli.jar && chmod a+x /root/jenkins-cli.jar
+wget http://localhost:8080/jnlpJars/jenkins-cli.jar -O /root/jenkins-cli.jar #&& chmod a+x /root/jenkins-cli.jar
 
 
 echo "авторизуемся как админ"

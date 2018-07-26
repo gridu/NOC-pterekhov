@@ -6,3 +6,7 @@ jenksetup.sh - downloads a jenkins.war from official site http://mirrors.jenkins
 jenkplugin.sh - downloads a jenkins-cli.jar, then uses it to download a job-dsl plugin and safe-restart jenkins
 
 start.sh - runs these 2 scripts sequentially 
+
+to build an image you should use sudo docker build cont/jenk . 
+to run an image you should use sudo docker run -p 8080:8080 -t cont/jenk
+

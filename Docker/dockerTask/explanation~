@@ -1,0 +1,8 @@
+Here you can see a dockerfile and a folder with 3 scripts
+
+jenksetup.sh - downloads a jenkins.war from official site http://mirrors.jenkins.io/war-stable/2.121.2/jenkins.war
+	       and launch jenkins.
+
+jenkplugin.sh - downloads a jenkins-cli.jar, then uses it to download a job-dsl plugin and safe-restart jenkins
+
+start.sh - runs these 2 scripts sequentially 
