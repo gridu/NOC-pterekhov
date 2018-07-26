@@ -46,4 +46,6 @@ answers:
 	6) The GC in the old generation uses an algorithm called "mark-sweep-compact."
 	   The first step of this algorithm is to mark the surviving objects in the old generation.
 	   Then, it checks the heap from the front and leaves only the surviving ones behind.
+
+	7) To increase the performance.
 	

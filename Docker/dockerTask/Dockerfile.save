@@ -1,0 +1,13 @@
+FROM java:8
+MAINTAINER PTerekhov
+USER root
+
+ENV HOST_URL = localhost
+
+ADD jenkins.war ./
+CMD java -jar jenkins.war
+CMD wget http://${HOST_URL}:8080/jnlpJars/jenkins-cli.jar -O /usr/bin/jenkins-cli.jar
+CMD java -jar jenkins-cli.ja java -jar /var/cache/jenkins/war/WEB-INF/jenkins-cli.jar -s http://192.168.130.10:8080/
+
+EXPOSE 8080
+

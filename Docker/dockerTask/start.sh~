@@ -1,0 +1,27 @@
+#включаем отображение ошибок
+set -ex
+
+#качаем jenkins с оффициального сайта
+#wget -P /jenkinsDIR/ http://mirrors.jenkins.io/war-stable/2.121.2/jenkins.war
+
+#запускаем jenkins
+java -jar /jenkinsDIR/jenkins.war &
+
+while  curl -s http://localhost:8080 ; 
+	do	
+			echo 'качаем jenkins-cli для дальнейшей работы' sleep 3s
+			#качаем jenkins-cli для дальнейшей работы
+			wget http://localhost:8080/jnlpJars/jenkins-cli.jar -O /jenkinsDIR/jenkins-cli.jar && chmod a+x /jenkinsDIR/jenkins-cli.jar
+			echo 'авторизуемся как админ' sleep 3s 
+			#авторизуемся как админ
+			java -jar /jenkinsDIR/jenkins-cli.jar -auth admin:$(cat /jenkinsDIR/.jenkins/secrets/initialAdminPassword) -s http://localhost:8080/
+			echo 'скачиваем плагин' sleep 3s  
+			#скачиваем плагин 
+			java -jar /jenkinsDIR/jenkins-cli.jar -s http://localhost:8080 install-plugin job-dsl
+			echo 'перезапускаем jenkins' sleep 3s   
+			#перезапускаем jenkins
+			java -jar /jenkinsDIR/jenkins-cli.jar -s http://localhost:8080 safe-restart 
+
+	done
+
+
