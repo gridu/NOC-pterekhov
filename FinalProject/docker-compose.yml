@@ -1,170 +1,294 @@
-version: '2.1'
+version: '3'
 services:
   rabbitmq:
-    image: rabbitmq:3-management
-    restart: always
+    image: library/rabbitmq:3-management
+    networks:
+       asujs-network:
+         aliases:
+           - rabbitmq
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
     ports:
       - 15672:15672
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+      - 5672:5672
+    links:
+      - config
+
 
   config:
     environment:
-      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-    image: sqshq/piggymetrics-config
-    restart: always
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+      CONFIG_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-config:latest
+    networks:
+       asujs-network:
+         aliases:
+           - config
+    hostname: config
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
+    ports:
+      - 8888:8888
+
 
   registry:
     environment:
-      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-    image: sqshq/piggymetrics-registry
-    restart: always
-    depends_on:
-      config:
-        condition: service_healthy
+      CONFIG_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-registry:latest
+    networks:
+       asujs-network:
+         aliases:
+           - registry
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
     ports:
       - 8761:8761
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+    links:
+      - config
+
 
   gateway:
     environment:
-      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-    image: sqshq/piggymetrics-gateway
-    restart: always
-    depends_on:
-      config:
-        condition: service_healthy
+      CONFIG_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-gateway:latest
+    networks:
+       asujs-network:
+         aliases:
+           - gateway
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
     ports:
-      - 80:4000
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+      - 8081:4000
 
   auth-service:
     environment:
-      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-      NOTIFICATION_SERVICE_PASSWORD: $NOTIFICATION_SERVICE_PASSWORD
-      STATISTICS_SERVICE_PASSWORD: $STATISTICS_SERVICE_PASSWORD
-      ACCOUNT_SERVICE_PASSWORD: $ACCOUNT_SERVICE_PASSWORD
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
-    image: sqshq/piggymetrics-auth-service
-    restart: always
+      CONFIG_SERVICE_PASSWORD: "test"
+      NOTIFICATION_SERVICE_PASSWORD: "test"
+      STATISTICS_SERVICE_PASSWORD: "test"
+      ACCOUNT_SERVICE_PASSWORD: "test"
+      MONGODB_PASSWORD: "test"
+    image: sqshq/piggymetrics-auth-service:latest
+    networks:
+       asujs-network:
+         aliases:
+           - auth-service
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
+    ports:
+      - 5000:5000
     depends_on:
-      config:
-        condition: service_healthy
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+       - config
+
+
 
   auth-mongodb:
     environment:
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
-    image: sqshq/piggymetrics-mongodb
-    restart: always
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+      MONGODB_PASSWORD: "test"
+    image: sqshq/piggymetrics-mongodb:latest
+    networks:
+       asujs-network:
+         aliases:
+           - auth-mongodb
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
+    ports:
+      - 25000:27017
+    links:
+      - config
+
 
   account-service:
     environment:
-      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-      ACCOUNT_SERVICE_PASSWORD: $ACCOUNT_SERVICE_PASSWORD
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
-    image: sqshq/piggymetrics-account-service
-    restart: always
+      CONFIG_SERVICE_PASSWORD: "test"
+      ACCOUNT_SERVICE_PASSWORD: "test"
+      MONGODB_PASSWORD: "test"
+    image: sqshq/piggymetrics-account-service:latest
+    networks:
+       asujs-network:
+         aliases:
+           - account-service
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
+    ports:
+      - 6000:6000
     depends_on:
-      config:
-        condition: service_healthy
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+       - config
+
 
   account-mongodb:
     environment:
       INIT_DUMP: account-service-dump.js
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
-    image: sqshq/piggymetrics-mongodb
-    restart: always
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+      MONGODB_PASSWORD: "test"
+    image: sqshq/piggymetrics-mongodb:latest
+    networks:
+       asujs-network:
+         aliases:
+           - account-mongodb
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 30
+        window: 20s
+    ports:
+      - 26000:27017
+    depends_on:
+       - config
+
 
   statistics-service:
     environment:
-      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
-      STATISTICS_SERVICE_PASSWORD: $STATISTICS_SERVICE_PASSWORD
-    image: sqshq/piggymetrics-statistics-service
-    restart: always
+      CONFIG_SERVICE_PASSWORD: "test"
+      MONGODB_PASSWORD: "test"
+      STATISTICS_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-statistics-service:latest
+    networks:
+       asujs-network:
+         aliases:
+           - statistics-service
+
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
+    ports:
+      - 7000:7000
     depends_on:
-      config:
-        condition: service_healthy
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+       - config
+
+
 
   statistics-mongodb:
     environment:
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
-    image: sqshq/piggymetrics-mongodb
-    restart: always
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+      MONGODB_PASSWORD: "test"
+    image: sqshq/piggymetrics-mongodb:latest
+    networks:
+       asujs-network:
+         aliases:
+           - statistics-mongodb
+
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
+    ports:
+      - 27000:27017
+    depends_on:
+       - config
+
+
 
   notification-service:
     environment:
-      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
-      NOTIFICATION_SERVICE_PASSWORD: $NOTIFICATION_SERVICE_PASSWORD
-    image: sqshq/piggymetrics-notification-service
-    restart: always
+      CONFIG_SERVICE_PASSWORD: "test"
+      MONGODB_PASSWORD: "test"
+      NOTIFICATION_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-notification-service:latest
+    networks:
+       asujs-network:
+         aliases:
+           - notification-service
+
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
+    ports:
+      - 8000:8000
     depends_on:
-      config:
-        condition: service_healthy
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+       - config
+
+
 
   notification-mongodb:
-    image: sqshq/piggymetrics-mongodb
-    restart: always
+    image: sqshq/piggymetrics-mongodb:latest
+    networks:
+       asujs-network:
+         aliases:
+           - notification-mongodb
+
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
     environment:
-      MONGODB_PASSWORD: $MONGODB_PASSWORD
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+      MONGODB_PASSWORD: "test"
+    ports:
+      - 28000:27017
+    depends_on:
+       - config
+
+
 
   monitoring:
     environment:
-      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-    image: sqshq/piggymetrics-monitoring
-    restart: always
-    depends_on:
-      config:
-        condition: service_healthy
+      CONFIG_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-monitoring:latest
+    networks:
+       asujs-network:
+         aliases:
+           - monitoring
+    deploy:
+          restart_policy:
+            condition: on-failure
+            delay: 5s
+            max_attempts: 30
+            window: 20s
+
+
     ports:
       - 9000:8080
       - 8989:8989
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+    depends_on:
+       - config
+
+
+
+networks:
+ asujs-network:
+  driver: overlay
